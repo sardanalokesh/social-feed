@@ -1,0 +1,38 @@
+.login-container {
+	height: 100%;
+	width: 100%;
+
+	.login-panel {
+		height: 350px;
+		width: 500px;
+		background-color: $navbarColor;
+		position: absolute;
+		left: 50%;
+		margin-left: -250px;
+		top: 50%;
+		margin-top: -175px;
+		color: $navbarFontColor;
+
+		.login-form {
+			width: 250px;
+			margin-top: 30px;
+			position: absolute;
+			left: 125px;
+			overflow: hidden;
+
+			.header {
+				margin-top: 0px;
+				text-align: center;
+
+				img {
+					width: 50px;
+				}
+			}
+
+			button {
+				background-color: $logoColor;
+			}
+		}
+
+	}
+}

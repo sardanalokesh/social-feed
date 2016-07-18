@@ -1,0 +1,45 @@
+<div class="container profile-container">
+	<div id="leftColumn" class="col-md-4">
+		<div class="profile-card card feed-card">
+		  <img id="profileImage" class="img-fluid img-circle center-block" ng-src="{{getDisplayImageUrl()}}" alt="Display Image">
+		  <div class="card-block text-center">
+		    <h4 class="card-title">{{currentUserDetails.name}}</h4>
+		    <p class="card-text no-bottom-margin">{{currentUserDetails.designation}}</p>
+		    <p class="card-text"><a href="mailto:{{currentUserDetails.email}}">{{currentUserDetails.email}}</a></p>
+		  </div>
+		</div>
+	</div>
+	<div id="rightColumn" class="col-md-8">
+		<div class="list-card card feed-card">
+		  <button type="button" class="list-btn btn btn-sm btn-primary pull-right" data-toggle="modal" data-target="#exploreTopicsModal">Explore Topics</button>
+		  <div class="card-block">
+		    <h4 class="card-title">My Topics</h4>
+		  </div>
+		  <ul class="list-group list-group-flush">
+		    <li class="list-group-item" ng-repeat="topic in userTopics track by $index">{{topic}}<button type="button" class="btn btn-sm btn-primary-outline pull-right" ng-click="unfollowTopic(topic)">Unfollow</button></li>
+		  </ul>
+		</div>
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exploreTopicsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Explore Topics</h4>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group list-group-flush">
+		    <li class="list-group-item" ng-repeat="topic in allTopics track by $index">{{topic}}<button type="button" class="btn btn-sm btn-primary-outline pull-right" ng-click="toggleTopicFollow(topic)">{{getFollowButtonText(topic)}}</button></li>
+		</ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

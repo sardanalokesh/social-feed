@@ -1,0 +1,37 @@
+<div class="login-container">
+	<div class="login-panel">
+		<form novalidate class="login-form" name="loginForm" ng-submit="submit()">
+	        <h2 class="header"><img src="images/e-X-Icon-all-blue.png" /></h2>
+	        <div class="form-group has-feedback" ng-class="{'has-error': hasError('userEmail'), 'has-success': isValid('userEmail')}">
+		        <label for="userEmail" class="sr-only">Email</label>
+		        <input type="text" id="userEmail" name="userEmail" class="form-control" placeholder="Username" required ng-model="user.username">
+		        <span class="help-block" ng-show="showHelpText('userEmail')">
+		        	{{getHelpText('userEmail')}}
+		        </span>
+		        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" ng-show="hasError('userEmail')"></span>
+		        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-show="isValid('userEmail')"></span>
+	        </div>
+	        <div class="form-group has-feedback" ng-class="{'has-error': hasError('userPassword'), 'has-success': isValid('userPassword')}">
+		        <label for="userPassword" class="sr-only">Password</label>
+		        <input type="password" id="userPassword" name="userPassword" class="form-control" placeholder="Password" required ng-minlength="constants.MIN_PASS_LENGTH" ng-model="user.password">
+		        <span class="help-block" ng-show="showHelpText('userPassword')">
+		        	{{getHelpText('userPassword')}}
+		        </span>
+		        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" ng-show="hasError('userPassword')"></span>
+		        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-show="isValid('userPassword')"></span>
+		    </div>
+		    <span class="has-error">
+			    <span class="help-block" ng-show="showLoginError">
+			        	{{getHelpText('login')}}
+			    </span>
+		    </span>
+	        <!-- <div class="checkbox form-group">
+	          <label>
+	            <input type="checkbox" ng-model="rememberMe"> Remember me
+	          </label>
+	        </div> -->
+	        <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+      	</form>
+	</div>
+</div>
+<loader />

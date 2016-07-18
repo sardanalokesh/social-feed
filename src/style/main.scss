@@ -1,0 +1,37 @@
+@import "variables";
+@import "navbar";
+@import "feed";
+@import "feed-home";
+@import "profile";
+@import "login";
+@import "loader";
+@import "util";
+
+body {
+	background-color: #E9EBEE;
+	font-size: 0.8rem;
+
+	h4 {
+		font-size: 1.1rem;
+	}
+
+	.form-control {
+		font-size: 0.8rem;
+	}
+
+	.btn {
+		font-size: 0.75rem;
+	}
+
+	.dropdown-menu {
+		font-size: 0.8rem;
+	}
+
+	.label {
+		font-size: 100%;
+	}
+
+	.card-link i {
+		font-size: 1rem;
+	}
+}

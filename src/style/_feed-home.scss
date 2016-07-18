@@ -1,0 +1,38 @@
+.home-container {
+	margin-top: 90px;
+
+	#createPostCard {
+		text-align: right;
+
+		button {
+			margin-top: 10px;
+		}
+
+		.card-icon {
+			width: 30px;
+	    	font-size: 20px;
+	    	cursor: pointer;
+		}
+
+		.card-dropdown {
+			position: relative;
+			top: 5px;
+		}
+
+		.preview-attachment {
+			text-align: center;
+			display: block;
+		}
+	}
+
+	.card-block {
+		img {
+			max-height: 300px;
+			margin-bottom: 10px;
+		}
+
+		.card-link {
+			cursor: pointer;
+		}
+	}
+}

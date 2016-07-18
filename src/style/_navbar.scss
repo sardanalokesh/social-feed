@@ -1,0 +1,39 @@
+.navbar {
+	.nav-item {
+		.nav-link {
+			font-size: 22px;
+			cursor: pointer;
+		}
+
+		.nav-text {
+			font-size: 15px;
+			padding-top: 13px;
+		}
+	}
+
+	.dropdown-menu {
+		.dropdown-item {
+			cursor: pointer;
+		}
+	}
+
+	#notificationBtn {
+		position: relative;
+
+		.dropdown-item {
+			/* border-top: 1px solid rgba(0,0,0,.15); */
+			/* border-bottom: 1px solid rgba(0,0,0,.15); */
+		}
+
+		.badge {
+			background: red;
+		    position: absolute;
+		    top: 10px;
+		    left: 10px;
+		}
+	}
+}
+
+.unread {
+	background-color: #E4E9F2;
+}

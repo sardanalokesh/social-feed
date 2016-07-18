@@ -1,0 +1,32 @@
+{
+  "name": "ep-ui",
+  "version": "1.0.0",
+  "description": "Edge for publishers UI",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server"
+  },
+  "author": "lokesh.sardana",
+  "license": "ISC",
+  "dependencies": {
+    "bower": "^1.7.9"
+  },
+  "devDependencies": {
+    "body-parser": "^1.15.2",
+    "bower": "^1.7.9",
+    "crypto": "0.0.3",
+    "express": "^4.14.0",
+    "grunt": "^1.0.1",
+    "grunt-bowercopy": "^1.2.4",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-sass": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-exec": "^1.0.0",
+    "jshint-stylish": "latest",
+    "lite-server": "^2.2.2"
+  }
+}

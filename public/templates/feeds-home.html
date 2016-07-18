@@ -1,0 +1,53 @@
+<div class="container home-container">
+	<div id="leftColumn" class="col-md-2">
+	</div>
+	<div id="middleColumn" class="col-md-8">
+		<div id="createPostCard" class="feed-card card card-block">
+			<textarea class="form-control" rows="3" placeholder="write something..." ng-model="newPost.content" ></textarea>
+			<select id="topicSelector" class="card-dropdown" ng-model="newPost.topic">
+			  <option ng-repeat="topic in allTopics track by $index" value="{{topic}}">{{topic}}</option>
+			</select>
+			<i class="card-icon fa fa-paperclip fa-rotate-90" data-toggle="modal" data-target="#imageUploadModal"></i>
+			<button id= "submitPost" type="button" class="btn btn-primary btn-sm" ng-click="submitPost(newPost)">Post</button>
+			<img class="card-img-bottom preview-attachment" ng-if="newPost.attachmentId" ng-src="{{getImageUrl(newPost.attachmentId)}}" alt="Preview attachment">
+		</div>
+		<div class="card feed-card" ng-repeat="fCard in feedCards track by $index">
+		  <div class="card-block no-bottom-padding">
+		    <span class="label label-default pull-right">{{fCard.topic}}</span>
+		    <h4 class="card-title">{{fCard.author}}</h4>
+		    <!-- <h6 class="card-subtitle text-muted">{{fCard.author.designation}}</h6> -->
+		  </div>
+		  <div class="card-block">
+		    <p class="card-text">{{fCard.content}}</p>
+		    <img ng-if="fCard.attachmentId" ng-src="{{getImageUrl(fCard.attachmentId)}}" class="img-fluid center-block" alt="Card image">
+		    <a class="card-link" ng-click="toggleLike(fCard)" data-toggle="tooltip" data-placement="top" title={{getLikingUsers(fCard)}} ng-class="{'text-muted': !alreadyLiked(fCard)}" tooltip><i class="fa fa-thumbs-o-up"></i> <span ng-show="!!fCard.likes">{{fCard.likes}}</span></a>
+		    <!-- <a href="#" class="card-link">Comment</a> -->
+		    <p class="card-text pull-right"><small class="text-muted">{{fCard.timeStamp || "Just now"}}</small></p>
+		  </div>
+		</div>
+	</div>
+	<div id="rightColumn" class="col-md-2">
+	</div>
+</div>
+
+
+<!-- Image upload modal -->
+<div class="modal fade" id="imageUploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Upload Image</h4>
+      </div>
+      <div class="modal-body">
+        <input type="file" file-model="attachmentImage"/>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="uploadFile()">Upload</button>
+      </div>
+    </div>
+  </div>
+</div>

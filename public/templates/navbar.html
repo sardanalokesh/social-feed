@@ -1,0 +1,34 @@
+<nav class="navbar navbar-dark bg-inverse navbar-fixed-top">
+  <a class="navbar-brand" href="#">
+	<span class="title">Expo Feed</span>
+  </a>
+  <ul class="nav navbar-nav pull-xs-right">
+    <li class="nav-item"><a class="nav-link nav-text" ui-sref="feeds.profile">{{currentUserDetails.name}}</a></li>
+    <li id="notificationBtn" class="nav-item">
+      <a class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-globe"/>
+      </a>
+      <span class="badge">{{totalUnreadNotifications}}</span>
+      <ul class="dropdown-menu dropdown-menu-right">
+        <li class="dropdown-item" ng-repeat="nt in notifications track by $index" ng-class="{'unread': !nt.read}">{{nt.text}}</li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" ui-sref="feeds.home">
+	      <i class="fa fa-home"/>
+      </a>
+    </li>
+    <!-- <li class="nav-item">
+      <a class="nav-link" href="#">Profile</a>
+    </li> -->
+    <li class="nav-item btn-group"><a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<!-- <i class="navbar-icon fa fa-user"/> -->
+		</a>
+		<ul class="dropdown-menu dropdown-menu-right">
+			<li class="dropdown-item" ui-sref="feeds.profile">My Profile</li>
+      <li class="dropdown-item" ng-click="logout()">Logout</li>
+    </ul>
+	</li>
+  </ul>
+  
+</nav>
